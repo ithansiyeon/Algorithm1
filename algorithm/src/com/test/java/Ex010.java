@@ -5,18 +5,10 @@ import java.util.Scanner;
 public class Ex010 {
 	private static Scanner scan = new Scanner(System.in);
 	public static void main(String[] args) {
-		m1();
 		m9();
 	}
 
-	private static void m1() {
-		System.out.print("문장 입력 : ");
-		String line = scan.nextLine();
-		System.out.print("역순 결과 : ");
-		for(int i=line.length()-1;i>=0;i--) {
-			System.out.print(line.charAt(i));
-		}
-	}
+
 
 	private static void m9() {
 		

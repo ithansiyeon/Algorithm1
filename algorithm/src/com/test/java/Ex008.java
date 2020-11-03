@@ -5,9 +5,33 @@ import java.util.Scanner;
 public class Ex008 {
 	private static Scanner scan = new Scanner(System.in);
 	public static void main(String[] args) {
+		//m1();
 		//m2();
 		//m6();
-		m5();
+		//m5();
+	}
+	private static void m1() {
+		
+//		문장을 입력받아 역순으로 출력하시오.
+//
+//		입력
+//
+//		문장 입력 : 안녕하세요. 홍길동입니다. 
+//		출력
+//
+//		역순 결과 : .다니입동길홍 .요세하녕안
+//		도움
+//
+//		루프 변수 i를 어떻게 제어하느냐?
+//		txt.charAt(i)
+//		txt.substring(i, i+1)
+		
+		System.out.print("문장 입력 : ");
+		String line = scan.nextLine();
+		System.out.print("역순 결과 : ");
+		for(int i=line.length()-1;i>=0;i--) {
+			System.out.print(line.charAt(i));
+		}
 	}
 
 	private static void m5() {

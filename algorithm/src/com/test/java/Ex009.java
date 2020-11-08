@@ -1,7 +1,10 @@
 package com.test.java;
 
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Scanner;
+import java.util.Set;
 
 public class Ex009 {
 	private static Scanner scan = new Scanner(System.in);
@@ -10,12 +13,107 @@ public class Ex009 {
 		//m2();
 		//m3();
 		//m4();
-		m5();
+		//m5();
+		//m6();
+		//m7();
 		//m8();
 		//m9();
 	}
 
+	private static void m7() {
+//		중복되지 않는 임의의 숫자 5개를 만드시오.
+//
+//		입력
+//
+//		없음
+//		출력
+//
+//		[5, 6, 1, 3, 2]
+//		조건
+//
+//		숫자의 범위 : 1 ~ 9
+//		추가조건
+//
+//		숫자의 범위를 입력받으시오.
+//		숫자의 개수를 입력받으시오.
+		
+		System.out.print("최소 : ");
+		int min = Integer.parseInt(scan.nextLine());
+		System.out.print("최대 : ");
+		int max = Integer.parseInt(scan.nextLine());
+		System.out.print("숫자의 개수 : ");
+		int num = Integer.parseInt(scan.nextLine());
+		Set<Integer> set = new HashSet<Integer>();
+		while(set.size()!=num){
+			set.add((int)(Math.random()*(max-min))+min);
+		}
+		int [] nums = new int[num];
+		int j = 0;
+		Iterator<Integer> it = set.iterator();
+		while(it.hasNext()) {
+			nums[j]=it.next();
+			j++;
+		}
+		System.out.println(Arrays.toString(nums));
+	}
+
+	private static void m6() {
+//		1~20 사이의 난수를 20개 담고 있는 배열을 생성한 뒤 아래의 조건을 적용해 출력하시오.
+//
+//		입력
+//
+//		최대 범위 : 15 
+//		최소 범위 : 5 
+//		출력
+//
+//		원본 : 10, 2, 3, 20, 15, 9, 5, 1, 3, 11, 15, 18, 9, 14, 18, 5, 8, 2, 1, 17
+//		결과 : 10, 15, 9, 5, 11, 15, 9, 14, 5, 8
+//		조건
+//
+//		난수를 20개 발생 후 배열에 넣는다.
+//		난수는 1 ~ 20 사이
+//		배열을 탐색하여 범위에 만족하는 숫자만 출력한다.
+		
+		System.out.print("최대 범위 : ");
+		int max = Integer.parseInt(scan.nextLine());
+		System.out.print("최소 범위 : ");
+		int min = Integer.parseInt(scan.nextLine());
+		int [] nums = new int [20];
+		int cnt = 0;
+		for(int i=0;i<20;i++) {
+			nums[i] = (int)(Math.random()*20)+1;
+			if(nums[i]>=min && nums[i]<max) {
+				cnt++;
+			}
+		}
+		int [] num = new int[cnt];
+		int j=0;
+		for(int i=0;i<20;i++) {
+			if(nums[i]>=min && nums[i]<max) {
+				num[j]=nums[i];
+				j++;
+			}
+		}
+		System.out.println("원본 : "+Arrays.toString(nums));
+		System.out.println("결과 : "+Arrays.toString(num));
+	}
+
 	private static void m5() {
+//		1~20 사이의 난수를 담고 있는 배열을 생성하고 최대값과 최소값을 출력하시오.
+//
+//		입력
+//
+//		없음
+//		출력
+//
+//		원본 : 10, 9, 3, 18, 15, 9, 5, 4, 3, 11, 15, 18, 9, 14, 18, 5, 8, 7, 9, 17
+//		최대값 : 18
+//		최소값 : 3
+//		조건
+//
+//		난수를 20개 발생 후 배열에 넣는다.
+//		난수는 1 ~ 20 사이
+		
 		int [] nums = new int[20];
 		
 		int max = -100;

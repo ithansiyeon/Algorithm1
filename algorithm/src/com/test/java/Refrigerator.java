@@ -6,6 +6,7 @@ public class Refrigerator {
 	public void add(Item item1) {
 		item[cnt] = item1;
 		cnt++;
+		System.out.printf("'%s'를 냉장고에 넣었습니다.\n",item1.getName());
 	}
 
 	public Item get(String name) {
